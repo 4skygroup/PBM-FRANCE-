@@ -1,13 +1,12 @@
 import './App.css'
+import Navbar from "./components/Navbar"
 
 function App() {
-  return (
-      <div className="bg-pbm-noir text-white min-h-screen flex items-center justify-center">
-        <h1 className="text-pbm-blue text-4xl">
-          PBM Website 🚀
-        </h1>
-      </div>
-  )
+    return (
+        <>
+            <Navbar />
+        </>
+    )
 }
 
 export default App
