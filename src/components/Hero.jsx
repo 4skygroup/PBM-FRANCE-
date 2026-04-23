@@ -36,6 +36,13 @@ export default function Hero() {
             <div className="relative z-10 flex items-center px-6 sm:px-10 lg:px-16 pt-28">
                 <div className="w-full max-w-2xl">
 
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 border border-pbm-blue3/25 px-4 py-1.5 rounded-full text-pbm-blue3 uppercase tracking-[2px] text-[11px] font-medium font-dm mb-7"
+                         style={{ background: "rgba(55,48,212,0.12)" }}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-pbm-blue3 animate-pulse" />
+                        Artisans métalliers IDF · Depuis 10 ans
+                    </div>
+
                     {/* Title */}
                     <h1
                         className="font-bebas leading-none tracking-wide mb-7"
