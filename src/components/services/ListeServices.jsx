@@ -1,13 +1,13 @@
 import ServiceCard from "./ServiceCard";
-import {SERVICES} from "../../data/services.js";
+import {services} from "../../data/Services.ts";
 
 export default function ListeServices() {
     return (
-        <section id="services" className="bg-pbm-noir px-[60px] py-[120px] relative">
+        <section id="services" className="bg-pbm-noir px-[60px] pt-[120px] pb-[120px] relative">
             {/* En-tête */}
             <div className="flex items-center gap-[10px] text-[10px] text-pbm-blue2 font-bold uppercase tracking-[3px] mb-4">
                 <span className="w-6 h-px bg-pbm-blue2 shrink-0" />
-                Nos prestations
+                Nos prestation
             </div>
             <h2 className="font-bebas font-bold text-[clamp(42px,5vw,72px)] leading-[0.95] tracking-[1px] mb-4 text-pbm-white">
                 Ce que nous <br />
@@ -22,7 +22,7 @@ export default function ListeServices() {
 
             {/* Grille */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
-                {SERVICES.map((service) => (
+                {services.map((service) => (
                     <ServiceCard key={service.number} {...service} />
                 ))}
             </div>

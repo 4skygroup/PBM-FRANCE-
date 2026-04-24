@@ -1,4 +1,4 @@
-export const SERVICES = [
+export const services = [
     {
         number: 1,
         icon: "🚪",

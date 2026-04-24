@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="relative min-h-screen grid lg:grid-cols-2 bg-pbm-noir overflow-hidden">
+        <section id="hero" className="relative min-h-screen grid lg:grid-cols-2 bg-pbm-noir overflow-hidden">
 
             {/* Background gradients */}
             <div
