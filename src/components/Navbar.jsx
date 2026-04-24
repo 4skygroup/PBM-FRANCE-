@@ -11,9 +11,9 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { label: "Accueil", href: "#" },
+        { label: "Accueil", href: "#hero" },
         { label: "Services", href: "#services" },
-        { label: "Réalisations", href: "#ListeRealisations.jsx" },
+        { label: "Réalisations", href: "#realisations" },
         { label: "À propos", href: "#why" },
     ];
 
@@ -32,21 +32,16 @@ export default function Navbar() {
                     px-6 py-4 md:px-[60px] md:py-5 border-b border-white/5 backdrop-blur-xl transition-colors duration-300
                 ${scrolled ? "bg-[#080810]/95" : "bg-[#080810]/85"}`}
             >
-                {/* Logo */}
-                <a href="#" onClick={(e) => handleSmoothScroll(e, "#")} className="no-underline">
-                    <span
-                        className="font-['Bebas_Neue'] text-2xl tracking-[3px]"
-                        style={{
-                            background: "linear-gradient(90deg, #f5f3ee, #6366f1)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                        }}
-                    >
-                        PBM{" "}
-                        <span style={{ color: "#6366f1", WebkitTextFillColor: "#6366f1" }}>
-                          FRANCE
-                        </span>
-                    </span>
+                <a
+                    onClick={(e) => handleSmoothScroll(e, "#")}
+                    className="cursor-pointer flex items-center"
+                    href="#hero"
+                >
+                    <img
+                        src="src/assets/CYBERSKY.png"
+                        alt="PBM France"
+                        className="h-10 md:h-12 w-auto object-contain"
+                    />
                 </a>
 
                 {/* Desktop nav links — hidden on mobile */}
