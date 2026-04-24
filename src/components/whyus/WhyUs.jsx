@@ -1,41 +1,5 @@
 import WhyUsCard from './WhyUsCard';
-
-const FEATURES = [
-    {
-        id: 1,
-        icon: '⚡',
-        title: 'Devis en 24h',
-        description: 'Réponse rapide garantie. Déplacement gratuit pour évaluation.',
-    },
-    {
-        id: 2,
-        icon: '🏆',
-        title: 'Sur mesure',
-        description: 'Chaque pièce fabriquée selon vos dimensions exactes.',
-    },
-    {
-        id: 3,
-        icon: '🔧',
-        title: 'Pose incluse',
-        description: 'Nos artisans assurent la fabrication et la pose complète.',
-    },
-    {
-        id: 4,
-        icon: '📍',
-        title: "Toute l'IDF",
-        description: "Intervention rapide partout en Île-de-France.",
-    },
-];
-
-const ENGAGEMENTS = [
-    'Déplacement gratuit pour estimation',
-    'Devis détaillé sous 24 heures',
-    'Fabrication artisanale dans notre atelier',
-    'Respect des délais convenus',
-    'Garantie décennale sur tous les travaux',
-    'Service après-vente réactif',
-    "Acompte de 30% — solde à la livraison",
-];
+import {Engagements, Features} from "../../data/WhyUs.js";
 
 export const WhyUs = () => {
     return (
@@ -77,7 +41,7 @@ export const WhyUs = () => {
 
                     {/* Grid feature cards */}
                     <div className="grid grid-cols-2 gap-5 mt-12">
-                        {FEATURES.map((feature) => (
+                        {Features.map((feature) => (
                             <WhyUsCard
                                 key={feature.id}
                                 icon={feature.icon}
@@ -117,7 +81,7 @@ export const WhyUs = () => {
 
                         {/* Liste engagements */}
                         <ul className="flex flex-col gap-3">
-                            {ENGAGEMENTS.map((item, index) => (
+                            {Engagements.map((item, index) => (
                                 <li
                                     key={index}
                                     className="flex items-center gap-3 font-dm text-[13px] text-pbm-grey2 font-light"

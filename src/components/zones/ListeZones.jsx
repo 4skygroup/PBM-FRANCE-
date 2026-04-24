@@ -1,5 +1,5 @@
 import ZoneCard from "./ZoneCard.jsx";
-import {ZONES} from "../../data/zones.js";
+import {Zones} from "../../data/Zones.ts";
 
 export default function ListeZones() {
     return (
@@ -8,7 +8,7 @@ export default function ListeZones() {
                 Zones d'intervention
             </span>
             <div className="flex gap-2 flex-wrap">
-                {ZONES.map((zone) => (
+                {Zones.map((zone) => (
                     <ZoneCard key={zone.label} {...zone} />
                 ))}
             </div>

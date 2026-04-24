@@ -1,4 +1,4 @@
-export const ZONES = [
+export const Zones = [
     { label: "Val d'Oise", code: "95" },
     { label: "Seine-Saint-Denis", code: "93" },
     { label: "Hauts-de-Seine", code: "92" },
