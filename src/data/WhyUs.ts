@@ -1,4 +1,4 @@
-export const Features = [
+export const features = [
     {
         id: 1,
         icon: '⚡',
@@ -25,7 +25,7 @@ export const Features = [
     },
 ];
 
-export const Engagements = [
+export const engagements = [
     'Déplacement gratuit pour estimation',
     'Devis détaillé sous 24 heures',
     'Fabrication artisanale dans notre atelier',

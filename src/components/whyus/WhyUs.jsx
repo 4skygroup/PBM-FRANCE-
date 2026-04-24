@@ -1,5 +1,5 @@
 import WhyUsCard from './WhyUsCard';
-import {Engagements, Features} from "../../data/WhyUs.js";
+import {engagements, features} from "../../data/WhyUs.js";
 
 export const WhyUs = () => {
     return (
@@ -41,7 +41,7 @@ export const WhyUs = () => {
 
                     {/* Grid feature cards */}
                     <div className="grid grid-cols-2 gap-5 mt-12">
-                        {Features.map((feature) => (
+                        {features.map((feature) => (
                             <WhyUsCard
                                 key={feature.id}
                                 icon={feature.icon}
@@ -81,7 +81,7 @@ export const WhyUs = () => {
 
                         {/* Liste engagements */}
                         <ul className="flex flex-col gap-3">
-                            {Engagements.map((item, index) => (
+                            {engagements.map((item, index) => (
                                 <li
                                     key={index}
                                     className="flex items-center gap-3 font-dm text-[13px] text-pbm-grey2 font-light"
