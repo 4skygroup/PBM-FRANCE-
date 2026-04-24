@@ -6,7 +6,7 @@ export default function ListeRealisations() {
         <section id="realisations" className="px-5 sm:px-8 md:px-[60px] py-16 md:py-[120px] bg-pbm-noir">
 
             {/* Section tag */}
-            <div className="flex items-center gap-2.5 mx-[40px] mb-4">
+            <div className="flex items-center gap-2.5 mx-[40px] md:mx-0 mb-4">
                 <span className="w-6 h-px bg-pbm-blue3" />
                 <span className="text-[10px] text-pbm-blue3 uppercase tracking-[3px] font-semibold font-dm">
                     Portfolio
@@ -14,7 +14,7 @@ export default function ListeRealisations() {
             </div>
 
             {/* Titre */}
-            <h2 className="font-bebas text-[clamp(42px,5vw,72px)] mx-[40px] leading-[.95] tracking-tight mb-4 text-pbm-white">
+            <h2 className="font-bebas text-[clamp(42px,5vw,72px)] mx-[40px] md:mx-0 leading-[.95] tracking-tight mb-4 text-pbm-white">
                 Nos{" "}
                 <span
                     style={{
@@ -28,7 +28,7 @@ export default function ListeRealisations() {
             </h2>
 
             {/* Description */}
-            <p className="text-[14px] md:text-[15px] mx-[40px] text-pbm-grey2 max-w-[480px] leading-[1.7] font-light mb-8 md:mb-12">
+            <p className="text-[14px] md:text-[15px] mx-[40px] md:mx-0 text-pbm-grey2 max-w-[480px] leading-[1.7] font-light mb-8 md:mb-12">
                 Quelques exemples de chantiers réalisés en Île-de-France. Chaque projet est unique.
             </p>
 
