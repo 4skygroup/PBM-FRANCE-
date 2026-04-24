@@ -18,9 +18,9 @@ export default function RealisationCard({ label, lieu, image, large }) {
             <div className="absolute inset-0 bg-gradient-to-t from-pbm-noir/75 to-transparent pointer-events-none" />
 
             {/* Label */}
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-                <span className="text-xs font-medium tracking-wide px-3.5 py-2 rounded-md border border-white/[0.08] text-pbm-white backdrop-blur-md bg-pbm-noir/80">
-                  {label} — {lieu}
+            <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5">
+                <span className="text-[10px] md:text-xs font-medium tracking-wide px-2.5 md:px-3.5 py-1.5 md:py-2 rounded-md border border-white/[0.08] text-pbm-white backdrop-blur-md bg-pbm-noir/80">
+                    {label} — {lieu}
                 </span>
             </div>
 
