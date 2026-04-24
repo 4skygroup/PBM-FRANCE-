@@ -1,5 +1,5 @@
 import ServiceCard from "./ServiceCard";
-import {SERVICES} from "../../data/services.js";
+import {Services} from "../../data/Services.ts";
 
 export default function ListeServices() {
     return (
@@ -22,7 +22,7 @@ export default function ListeServices() {
 
             {/* Grille */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
-                {SERVICES.map((service) => (
+                {Services.map((service) => (
                     <ServiceCard key={service.number} {...service} />
                 ))}
             </div>
