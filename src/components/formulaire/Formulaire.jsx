@@ -1,102 +1,198 @@
+import { useForm } from "@formspree/react";
 import { useState } from "react";
-import {PRESTATIONS} from "./constants.js";
+import Field from "./Field";
+import SuccessState from "./SuccessState";
+import LockIcon from "./LockIcon";
+import Spinner from "./Spinner";
+import { PRESTATIONS } from "./constants.js";
+import { buildWhatsAppURL } from "./emailService.js";
 
-export default function StyledForm() {
-    const [form, setForm] = useState({
-        nom: "",
-        tel: "",
-        email: "",
-        ville: "",
-        prestation: "",
-        desc: "",
-    });
+const INITIAL = { nom: "", tel: "", email: "", ville: "", prestation: "", desc: "" };
 
-    function handleChange(e) {
-        setForm({
-            ...form,
-            [e.target.name]: e.target.value,
-        });
+export default function DevisForm() {
+    const [formspreeState, formspreeSubmit] = useForm("xnjlyryo");
+    const [fields, setFields] = useState(INITIAL);
+    const [errors, setErrors] = useState({});
+
+    const set = (key) => (e) => setFields((p) => ({ ...p, [key]: e.target.value }));
+
+    function validate() {
+        const errs = {};
+        if (!fields.nom.trim())       errs.nom        = "Ce champ est requis";
+        if (!fields.tel.trim())       errs.tel        = "Ce champ est requis";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) errs.email = "Email invalide";
+        if (!fields.ville.trim())     errs.ville      = "Ce champ est requis";
+        if (!fields.prestation)       errs.prestation = "Veuillez sélectionner une prestation";
+        setErrors(errs);
+        return Object.keys(errs).length === 0;
     }
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        console.log(form);
-        alert("Formulaire envoyé !");
+        if (!validate()) return;
+        await formspreeSubmit({
+            nom:         fields.nom,
+            telephone:   fields.tel,
+            email:       fields.email,
+            ville:       fields.ville,
+            prestation:  fields.prestation,
+            description: fields.desc || "Non précisée",
+        });
+        window.open(buildWhatsAppURL(fields), "_blank");
     }
 
-    const input =
-        "w-full px-4 py-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500";
+    const inputBase   = "w-full bg-white/[0.04] border rounded-lg px-3.5 py-3 text-pbm-white font-dm text-sm outline-none transition-all duration-200 placeholder:text-pbm-grey focus:border-pbm-blue3/50 focus:bg-pbm-blue3/[0.06]";
+    const inputError  = "border-red-500/60 bg-red-500/[0.04]";
+    const inputNormal = "border-white/[0.09]";
 
     return (
-        <div id="formulaire" className="min-h-screen flex flex-col items-center justify-center bg-pbm-noir2 p-6">
+        <section
+            id="devis"
+            className="relative bg-pbm-noir2 overflow-hidden px-6 py-24 md:px-16 lg:px-24"
+        >
+            <div
+                className="pointer-events-none absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[700px] h-[350px]"
+                style={{ background: "radial-gradient(ellipse, rgba(55,48,212,0.13) 0%, transparent 60%)" }}
+            />
 
-            <div>
-                {/* Section tag */}
-                <div className="flex items-center gap-2.5 mx-[40px] md:mx-0 mb-4">
-                    <span className="w-6 h-px bg-pbm-blue3" />
-                    <span className="text-[10px] text-pbm-blue3 uppercase tracking-[3px] font-semibold font-dm">
-                        CONTACT
+            <div className="relative z-10 mx-auto max-w-[660px] text-center">
+                <div className="mb-4 inline-flex items-center gap-2.5">
+                    <span className="block h-px w-6 bg-pbm-blue3" />
+                    <span className="font-dm text-[10px] font-semibold uppercase tracking-[3px] text-pbm-blue3">
+                        Contact
                     </span>
                 </div>
 
-                {/* Titre */}
-                <h2 className="font-bebas text-[clamp(42px,5vw,72px)] mx-[40px] md:mx-0 leading-[.95] tracking-tight mb-4 text-pbm-white">
+                <h2 className="font-bebas text-[clamp(42px,6vw,68px)] leading-[0.95] tracking-wide text-pbm-white">
                     Devis{" "}
-                    <span
-                        style={{
-                            background: "linear-gradient(90deg, #4f46e5, #6366f1)",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                        }}
-                    >
+                    <span className="bg-gradient-to-r from-pbm-blue2 to-pbm-blue3 bg-clip-text text-transparent">
                         gratuit
                     </span>
+                    <br />
                     sous 24 heures
                 </h2>
 
-                {/* Description */}
-                <p className="text-[14px] md:text-[15px] mx-[40px] md:mx-0 text-pbm-grey2 max-w-[480px] leading-[1.7] font-light mb-8 md:mb-12">
+                <p className="mt-3 font-dm text-sm font-light leading-relaxed text-pbm-grey2">
                     Décrivez votre projet. Nous vous recontactons rapidement pour organiser un déplacement gratuit.
                 </p>
+
+                <div
+                    className="mt-11 rounded-[20px] border p-8 md:p-11 text-left"
+                    style={{
+                        background: "#13131f",
+                        borderColor: "rgba(99,102,241,0.15)",
+                        boxShadow: "0 40px 80px rgba(0,0,0,0.4)",
+                    }}
+                >
+                    {formspreeState.succeeded ? (
+                        <SuccessState />
+                    ) : (
+                        <form action="https://formspree.io/f/xnjlyryo" method="POST" onSubmit={handleSubmit} noValidate>
+                            <div className="mb-3.5 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+                                <Field label="Prénom & Nom" required error={errors.nom}>
+                                    <input
+                                        type="text"
+                                        name="nom"
+                                        placeholder="Jean Dupont"
+                                        value={fields.nom}
+                                        onChange={set("nom")}
+                                        className={`${inputBase} ${errors.nom ? inputError : inputNormal}`}
+                                    />
+                                </Field>
+                                <Field label="Téléphone" required error={errors.tel}>
+                                    <input
+                                        type="tel"
+                                        name="telephone"
+                                        placeholder="06 XX XX XX XX"
+                                        value={fields.tel}
+                                        onChange={set("tel")}
+                                        className={`${inputBase} ${errors.tel ? inputError : inputNormal}`}
+                                    />
+                                </Field>
+                            </div>
+
+                            <div className="mb-3.5 grid grid-cols-1 gap-3.5 sm:grid-cols-2">
+                                <Field label="Email" required error={errors.email}>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="votre@email.fr"
+                                        value={fields.email}
+                                        onChange={set("email")}
+                                        className={`${inputBase} ${errors.email ? inputError : inputNormal}`}
+                                    />
+                                </Field>
+                                <Field label="Ville" required error={errors.ville}>
+                                    <input
+                                        type="text"
+                                        name="ville"
+                                        placeholder="Cergy, Gonesse, Paris…"
+                                        value={fields.ville}
+                                        onChange={set("ville")}
+                                        className={`${inputBase} ${errors.ville ? inputError : inputNormal}`}
+                                    />
+                                </Field>
+                            </div>
+
+                            <div className="mb-3.5">
+                                <Field label="Type de prestation" required error={errors.prestation}>
+                                    <select
+                                        name="prestation"
+                                        value={fields.prestation}
+                                        onChange={set("prestation")}
+                                        className={`${inputBase} cursor-pointer appearance-none ${errors.prestation ? inputError : inputNormal} ${!fields.prestation ? "text-pbm-grey" : "text-pbm-white"}`}
+                                        style={{
+                                            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b7e' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`,
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundPosition: "right 14px center",
+                                            paddingRight: "36px",
+                                        }}
+                                    >
+                                        <option value="">Sélectionnez une prestation</option>
+                                        {PRESTATIONS.map((p) => (
+                                            <option key={p} value={p} style={{ background: "#13131f" }}>{p}</option>
+                                        ))}
+                                    </select>
+                                </Field>
+                            </div>
+
+                            <div className="mb-3.5">
+                                <Field label="Description du projet">
+                                    <textarea
+                                        name="description"
+                                        rows={4}
+                                        placeholder="Décrivez votre projet, les dimensions si vous les connaissez, vos contraintes…"
+                                        value={fields.desc}
+                                        onChange={set("desc")}
+                                        className={`${inputBase} resize-none ${inputNormal}`}
+                                    />
+                                </Field>
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={formspreeState.submitting}
+                                className="mt-2 flex w-full items-center justify-center gap-2 rounded-[10px] py-4 font-dm text-[15px] font-medium text-white transition-all duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+                                style={{
+                                    background: "linear-gradient(135deg, #3730d4, #4f46e5)",
+                                    boxShadow: "0 8px 28px rgba(55,48,212,0.35)",
+                                }}
+                            >
+                                {formspreeState.submitting ? (
+                                    <><Spinner /> Envoi en cours…</>
+                                ) : (
+                                    "Envoyer ma demande de devis →"
+                                )}
+                            </button>
+
+                            <p className="mt-3.5 flex items-center justify-center gap-1.5 font-dm text-[11px] text-pbm-grey">
+                                <LockIcon />
+                                Déplacement gratuit · Réponse sous 24h · Sans engagement
+                            </p>
+                        </form>
+                    )}
+                </div>
             </div>
-
-            <div className="w-full max-w-xl bg-white/[0.03] p-8 rounded-xl shadow-lg">
-                <form onSubmit={handleSubmit} className="space-y-4 p-4">
-
-                    <input name="nom" placeholder="Nom" value={form.nom} onChange={handleChange} className={input} />
-                    <input name="tel" placeholder="Téléphone" value={form.tel} onChange={handleChange} className={input} />
-                    <input name="email" placeholder="Email" value={form.email} onChange={handleChange} className={input} />
-                    <input name="ville" placeholder="Ville" value={form.ville} onChange={handleChange} className={input} />
-
-                    <select
-                        name="prestation"
-                        value={form.prestation}
-                        onChange={handleChange}
-                        className={input}
-                    >
-                        <option value="">Choisir une prestation</option>
-                        {PRESTATIONS.map(p => (
-                            <option>{p}</option>
-                        ))}
-                    </select>
-
-                    <textarea
-                        name="desc"
-                        placeholder="Description"
-                        value={form.desc}
-                        onChange={handleChange}
-                        className={`${input} h-24 resize-none`}
-                    />
-
-                    <button
-                        type="submit"
-                        className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition"
-                    >
-                        Envoyer
-                    </button>
-
-                </form>
-            </div>
-        </div>
+        </section>
     );
 }

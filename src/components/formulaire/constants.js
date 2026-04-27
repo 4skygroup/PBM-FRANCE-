@@ -7,3 +7,5 @@ export const PRESTATIONS = [
     "Vitrerie & aluminium",
     "Autre",
 ];
+
+export const WHATSAPP_NUMBER = "33600000000";
