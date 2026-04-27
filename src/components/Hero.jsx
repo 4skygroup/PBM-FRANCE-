@@ -149,7 +149,7 @@ export default function Hero() {
                         <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
                         <span className="w-2.5 h-2.5 rounded-full bg-[#28ca40]" />
                         <div className="flex-1 bg-white/[0.06] rounded h-[26px] flex items-center px-3 text-[11px] text-pbm-grey font-dm gap-1.5">
-                            🔒 pro-batiment-menuiserie.fr
+                            🔒 pbm-france.com
                         </div>
                     </div>
 

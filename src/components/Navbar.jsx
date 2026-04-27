@@ -40,7 +40,7 @@ export default function Navbar() {
                     <img
                         src="src/assets/CYBERSKY.png"
                         alt="PBM France"
-                        className="h-10 md:h-12 w-auto object-contain"
+                        className="h-8 md:h-10 w-auto object-contain"
                     />
                 </a>
 
