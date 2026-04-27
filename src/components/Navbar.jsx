@@ -29,8 +29,8 @@ export default function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between
-                    px-6 py-4 md:px-[60px] md:py-5 border-b border-white/5 backdrop-blur-xl transition-colors duration-300
-                ${scrolled ? "bg-[#080810]/95" : "bg-[#080810]/85"}`}
+                px-6 py-4 md:px-[60px] md:py-5 border-b border-black/5 backdrop-blur-xl transition-all duration-300
+                ${scrolled ? "bg-white/95 shadow-sm" : "bg-white/85"}`}
             >
                 <a
                     onClick={(e) => handleSmoothScroll(e, "#")}
@@ -44,15 +44,15 @@ export default function Navbar() {
                     />
                 </a>
 
-                {/* Desktop nav links — hidden on mobile */}
+                {/* Desktop nav */}
                 <ul className="hidden md:flex items-center gap-9 list-none m-0 p-0">
                     {navLinks.map((link) => (
                         <li key={link.label}>
                             <a
                                 href={link.href}
                                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                                className="no-underline text-[#a0a0b0] text-[13px] font-normal tracking-[0.5px]
-                                hover:text-[#f5f3ee] transition-colors duration-200"
+                                className="no-underline text-gray-700 text-[13px] font-normal tracking-[0.5px]
+                                hover:text-black transition-colors duration-200"
                             >
                                 {link.label}
                             </a>
@@ -70,45 +70,46 @@ export default function Navbar() {
                     </li>
                 </ul>
 
-                {/* Right side : phone + hamburger */}
+                {/* Right side */}
                 <div className="flex items-center gap-4">
-                    {/* Phone — hidden on mobile */}
                     <a
                         href="tel:+33600000000"
                         className="hidden md:flex items-center gap-1.5 no-underline
-                        text-[13px] text-[#a0a0b0] hover:text-[#f5f3ee] transition-colors duration-200"
+                        text-[13px] text-gray-600 hover:text-black transition-colors duration-200"
                     >
                         <span>📞</span>
                         <span>06 XX XX XX XX</span>
                     </a>
 
-                    {/* Hamburger — visible on mobile only */}
+                    {/* Hamburger */}
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
                         aria-label="Ouvrir le menu"
                         className="flex md:hidden flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
                     >
                         <span
-                            className="block w-[22px] h-[2px] bg-[#f5f3ee] rounded-sm transition-all duration-300 origin-center"
+                            className="block w-[22px] h-[2px] bg-black rounded-sm transition-all duration-300 origin-center"
                             style={{
                                 transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none",
                             }}
                         />
                         <span
-                            className="block w-[22px] h-[2px] bg-[#f5f3ee] rounded-sm transition-all duration-300"
+                            className="block w-[22px] h-[2px] bg-black rounded-sm transition-all duration-300"
                             style={{ opacity: menuOpen ? 0 : 1 }}
                         />
                         <span
-                            className="block w-[22px] h-[2px] bg-[#f5f3ee] rounded-sm transition-all duration-300 origin-center"
-                            style={{transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",}}
+                            className="block w-[22px] h-[2px] bg-black rounded-sm transition-all duration-300 origin-center"
+                            style={{
+                                transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+                            }}
                         />
                     </button>
                 </div>
             </nav>
 
-            {/* Mobile menu overlay */}
+            {/* Mobile menu */}
             <div
-                className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-8 bg-[#080810]/98 backdrop-blur-xl transition-opacity duration-300
+                className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-8 bg-white transition-opacity duration-300
                 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
             >
                 {navLinks.map((link) => (
@@ -116,11 +117,12 @@ export default function Navbar() {
                         key={link.label}
                         href={link.href}
                         onClick={(e) => handleSmoothScroll(e, link.href)}
-                        className="no-underline text-[#f5f3ee] hover:text-[#6366f1] font-['Bebas_Neue'] text-[42px] tracking-[3px] transition-colors duration-200"
+                        className="no-underline text-black hover:text-indigo-600 font-['Bebas_Neue'] text-[42px] tracking-[3px] transition-colors duration-200"
                     >
                         {link.label}
                     </a>
                 ))}
+
                 <a
                     href="#devis"
                     onClick={(e) => handleSmoothScroll(e, "#devis")}
@@ -130,7 +132,10 @@ export default function Navbar() {
                     Devis gratuit →
                 </a>
 
-                <a href="tel:+33600000000" className="no-underline text-[#6b6b7e] text-sm flex items-center gap-2">
+                <a
+                    href="tel:+33600000000"
+                    className="no-underline text-gray-500 text-sm flex items-center gap-2"
+                >
                     📞 06 XX XX XX XX
                 </a>
             </div>
