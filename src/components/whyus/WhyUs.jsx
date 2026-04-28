@@ -3,7 +3,7 @@ import {engagements, features} from "../../data/WhyUs.js";
 
 export const WhyUs = () => {
     return (
-        <section className="relative bg-pbm-noir2 px-[60px] py-[120px] overflow-hidden">
+        <section id="why" className="relative bg-pbm-noir2 px-[60px] py-[120px] overflow-hidden">
             {/* Radial glow décoratif */}
             <div className="
             absolute -top-[200px] -right-[200px] w-[600px] h-[600px]

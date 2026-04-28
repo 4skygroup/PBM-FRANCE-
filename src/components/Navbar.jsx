@@ -12,9 +12,10 @@ export default function Navbar() {
 
     const navLinks = [
         { label: "Accueil", href: "#hero" },
+        { label: "À propos", href: "#" },
         { label: "Services", href: "#services" },
         { label: "Réalisations", href: "#realisations" },
-        { label: "À propos", href: "#why" },
+        { label: "Pourquoi nous ?", href: "#why" },
     ];
 
     const handleSmoothScroll = (e, href) => {
@@ -58,16 +59,6 @@ export default function Navbar() {
                             </a>
                         </li>
                     ))}
-                    <li>
-                        <a
-                            href="#devis"
-                            onClick={(e) => handleSmoothScroll(e, "#devis")}
-                            className="no-underline bg-[#4f46e5] hover:bg-[#6366f1] text-white
-                            px-[22px] py-[10px] rounded-md text-[13px] font-medium transition-colors duration-200"
-                        >
-                            Devis gratuit
-                        </a>
-                    </li>
                 </ul>
 
                 {/* Right side */}

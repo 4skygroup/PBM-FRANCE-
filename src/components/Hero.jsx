@@ -77,7 +77,7 @@ export default function Hero() {
                     {/* CTA */}
                     <div className="flex items-center gap-4 flex-wrap">
                         <a
-                            href="#devis"
+                            href="#realisations"
                             className="font-dm font-medium text-sm text-white px-8 py-3.5 rounded-lg inline-flex items-center gap-2 transition-all duration-200 hover:-translate-y-0.5"
                             style={{
                                 background: "linear-gradient(135deg, #3730d4, #4f46e5)",
@@ -93,15 +93,9 @@ export default function Hero() {
                                     "0 8px 30px rgba(55,48,212,0.35)")
                             }
                         >
-                            Devis gratuit 24h →
+                            Nos réalisations →
                         </a>
 
-                        <a
-                            href="#realisations"
-                            className="font-dm font-light text-sm text-pbm-white px-8 py-3.5 rounded-lg inline-flex items-center gap-2 transition-all duration-200 border border-white/15 hover:border-pbm-blue3/50 hover:text-pbm-blue3"
-                        >
-                            Nos réalisations
-                        </a>
                     </div>
 
                     {/* Stats */}
