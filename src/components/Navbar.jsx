@@ -62,12 +62,12 @@ export default function Navbar() {
                 {/* Right side */}
                 <div className="flex items-center gap-4">
                     <a
-                        href="tel:+33600000000"
+                        href="tel:+0652377496"
                         className="hidden md:flex items-center gap-1.5 no-underline
                         text-[13px] text-black-600 hover:text-gray-500 transition-colors duration-200"
                     >
                         <Phone size={16} className="text-pbm-blue3" />
-                        <span>06 XX XX XX XX</span>
+                        <span>06 52 37 74 96</span>
                     </a>
 
                     {/* Hamburger */}
@@ -127,7 +127,7 @@ export default function Navbar() {
                     className="no-underline text-gray-500 text-sm flex items-center gap-2"
                 >
                     <Phone size={16} className="text-pbm-blue3" />
-                    06 XX XX XX XX
+                    06 52 37 74 96
                 </a>
             </div>
         </>

@@ -3,10 +3,10 @@ import React from 'react';
 import Logo from "../Logo.jsx";
 
 const Footer = () => {
-    const phone = '06 XX XX XX XX';
+    const phone = '06 52 37 74 96';
     const email = 'contact@pbmfrance.fr';
     const address = 'Le Thillay, Val d\'Oise 95';
-    const whatsappNumber = '33600000000';
+    const whatsappNumber = '06 52 37 74 96';
 
     return (
         <footer className="bg-gray-300 shadow-sm border-t border-gray-200">
