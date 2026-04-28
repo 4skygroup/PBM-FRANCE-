@@ -101,15 +101,16 @@ export default function Navbar() {
 
             {/* Mobile menu */}
             <div
-                className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-8 bg-white transition-opacity duration-300
+                className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-6 transition-opacity duration-300
                 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+                style={{ background: "#0e0e1a", borderTop: "1px solid rgba(99,102,241,0.15)" }}
             >
                 {navLinks.map((link) => (
                     <a
                         key={link.label}
                         href={link.href}
                         onClick={(e) => handleSmoothScroll(e, link.href)}
-                        className="no-underline text-black hover:text-indigo-600 font-['Bebas_Neue'] text-[42px] tracking-[3px] transition-colors duration-200"
+                        className="no-underline text-[#f5f3ee] hover:text-[#6366f1] font-sans font-semibold text-[22px] uppercase tracking-[2px] transition-colors duration-200"
                     >
                         {link.label}
                     </a>
