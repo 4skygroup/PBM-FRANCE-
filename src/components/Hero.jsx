@@ -99,7 +99,7 @@ export default function Hero() {
                     </div>
 
                     {/* Stats */}
-                    <div className="flex gap-12 mt-16 pt-10 border-t border-white/[0.06] flex-wrap my-6">
+                    <div id="zone" className="flex gap-12 mt-16 pt-10 border-t border-white/[0.06] flex-wrap my-6">
                         {[
                             { number: "10+", label: "Ans d'expérience" },
                             { number: "500+", label: "Chantiers réalisés" },
