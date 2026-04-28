@@ -1,25 +1,27 @@
+import { Zap, Trophy, Wrench, MapPin } from 'lucide-react';
+
 export const features = [
     {
         id: 1,
-        icon: '⚡',
+        icon: Zap,
         title: 'Devis en 24h',
         description: 'Réponse rapide garantie. Déplacement gratuit pour évaluation.',
     },
     {
         id: 2,
-        icon: '🏆',
+        icon: Trophy,
         title: 'Sur mesure',
         description: 'Chaque pièce fabriquée selon vos dimensions exactes.',
     },
     {
         id: 3,
-        icon: '🔧',
+        icon: Wrench,
         title: 'Pose incluse',
         description: 'Nos artisans assurent la fabrication et la pose complète.',
     },
     {
         id: 4,
-        icon: '📍',
+        icon: MapPin,
         title: "Toute l'IDF",
         description: "Intervention rapide partout en Île-de-France.",
     },

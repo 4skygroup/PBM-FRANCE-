@@ -3,7 +3,7 @@ import {zones} from "../../data/Zones.ts";
 
 export default function ListeZones() {
     return (
-        <div className="bg-pbm-noir border-t border-white/[0.04] px-[60px] pt-[60px] flex items-center gap-8 flex-wrap">
+        <div id="zone" className="bg-pbm-noir border-t border-white/[0.04] px-[60px] pt-[60px] flex items-center gap-8 flex-wrap">
             <span className="text-[11px] text-pbm-grey uppercase tracking-[2px] whitespace-nowrap">
                 Zones d'intervention
             </span>

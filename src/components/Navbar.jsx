@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import logo from "../assets/CYBERSKY.png";
+import React, { useState, useEffect } from "react";
+import Logo from "../Logo.jsx";
+import {Phone} from "lucide-react";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -39,11 +40,7 @@ export default function Navbar() {
                     className="cursor-pointer flex items-center"
                     href="#hero"
                 >
-                    <img
-                        src= {logo}
-                        alt="PBM France"
-                        className="h-8 md:h-10 w-auto object-contain"
-                    />
+                    <Logo />
                 </a>
 
                 {/* Desktop nav */}
@@ -53,8 +50,8 @@ export default function Navbar() {
                             <a
                                 href={link.href}
                                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                                className="no-underline text-gray-700 text-[13px] font-normal tracking-[0.5px]
-                                hover:text-black transition-colors duration-200"
+                                className="no-underline text-black-400 text-[13px] font-medium tracking-[0.5px]
+                                hover:text-gray-500 transition-colors duration-200"
                             >
                                 {link.label}
                             </a>
@@ -65,12 +62,12 @@ export default function Navbar() {
                 {/* Right side */}
                 <div className="flex items-center gap-4">
                     <a
-                        href="tel:+33600000000"
+                        href="tel:+0652377496"
                         className="hidden md:flex items-center gap-1.5 no-underline
-                        text-[13px] text-gray-600 hover:text-black transition-colors duration-200"
+                        text-[13px] text-black-600 hover:text-gray-500 transition-colors duration-200"
                     >
-                        <span>📞</span>
-                        <span>06 XX XX XX XX</span>
+                        <Phone size={16} className="text-pbm-blue3" />
+                        <span>06 52 37 74 96</span>
                     </a>
 
                     {/* Hamburger */}
@@ -101,15 +98,16 @@ export default function Navbar() {
 
             {/* Mobile menu */}
             <div
-                className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-8 bg-white transition-opacity duration-300
+                className={`fixed inset-0 z-[99] flex flex-col items-center justify-center gap-6 transition-opacity duration-300
                 ${menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+                style={{ background: "#0e0e1a", borderTop: "1px solid rgba(99,102,241,0.15)" }}
             >
                 {navLinks.map((link) => (
                     <a
                         key={link.label}
                         href={link.href}
                         onClick={(e) => handleSmoothScroll(e, link.href)}
-                        className="no-underline text-black hover:text-indigo-600 font-['Bebas_Neue'] text-[42px] tracking-[3px] transition-colors duration-200"
+                        className="no-underline text-[#f5f3ee] hover:text-[#6366f1] font-sans font-semibold text-[22px] uppercase tracking-[2px] transition-colors duration-200"
                     >
                         {link.label}
                     </a>
@@ -128,7 +126,8 @@ export default function Navbar() {
                     href="tel:+33600000000"
                     className="no-underline text-gray-500 text-sm flex items-center gap-2"
                 >
-                    📞 06 XX XX XX XX
+                    <Phone size={16} className="text-pbm-blue3" />
+                    06 52 37 74 96
                 </a>
             </div>
         </>
