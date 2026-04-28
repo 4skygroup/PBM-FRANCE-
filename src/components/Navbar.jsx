@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/CYBERSKY.png";
+import Logo from "../Logo.jsx";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -39,11 +39,7 @@ export default function Navbar() {
                     className="cursor-pointer flex items-center"
                     href="#hero"
                 >
-                    <img
-                        src= {logo}
-                        alt="PBM France"
-                        className="h-8 md:h-10 w-auto object-contain"
-                    />
+                    <Logo />
                 </a>
 
                 {/* Desktop nav */}
