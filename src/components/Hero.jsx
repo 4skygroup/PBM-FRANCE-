@@ -155,23 +155,44 @@ export default function Hero() {
 
                     {/* Content */}
                     <div className="p-5">
-                        <div className="w-full h-40 rounded-xl mb-4 overflow-hidden relative border border-pbm-blue3/15">
-                            <img
-                                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
-                                alt="Chantier métallerie"
-                                className="w-full h-full object-cover opacity-70"
-                            />
+
+                        {/* BANNIÈRE "Portails et Clôtures sur Mesure" */}
+                        <div
+                            className="w-full h-40 rounded-xl mb-4 overflow-hidden relative flex items-center justify-between px-6"
+                            style={{
+                                background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 60%, #1e3a8a 100%)",
+                            }}
+                        >
+                            {/* Chevron décoratif central */}
                             <div
-                                className="absolute inset-0 flex items-center justify-center font-bebas text-3xl tracking-widest text-white/75"
+                                className="absolute inset-y-0 left-[58%] w-12"
                                 style={{
-                                    background:
-                                        "linear-gradient(135deg, rgba(55,48,212,0.4), rgba(0,0,0,0.5))",
+                                    background: "linear-gradient(90deg, transparent, rgba(30,58,138,0.6))",
+                                    clipPath: "polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%)",
                                 }}
+                            />
+
+                            {/* Texte gauche */}
+                            <div className="z-10">
+                                <p className="text-blue-200 text-[11px] font-medium mb-1 tracking-wide">
+                                    Prêt à transformer l'apparence de votre entrée ?
+                                </p>
+                                <p className="text-white font-bebas text-2xl tracking-wide leading-tight">
+                                    Portails et Clôtures<br />sur Mesure
+                                </p>
+                            </div>
+
+                            {/* Bouton droit */}
+                            <div
+                                className="z-10 flex items-center gap-2 px-4 py-2.5 rounded-md text-white text-[12px] font-semibold whitespace-nowrap flex-shrink-0"
+                                style={{ background: "rgba(30,58,138,0.85)", border: "1px solid rgba(147,197,253,0.3)" }}
                             >
-                                PBM FRANCE
+                                <span>→</span>
+                                <span>Obtenez un devis gratuit</span>
                             </div>
                         </div>
 
+                        {/* Cards */}
                         <div className="grid grid-cols-3 gap-2.5">
                             {[1, 2, 3].map((_, i) => (
                                 <div
