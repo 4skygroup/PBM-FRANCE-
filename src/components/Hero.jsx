@@ -183,13 +183,10 @@ export default function Hero() {
                             </div>
 
                             {/* Bouton droit */}
-                            <div
-                                className="z-10 flex items-center gap-2 px-4 py-2.5 rounded-md text-white text-[12px] font-semibold whitespace-nowrap flex-shrink-0"
-                                style={{ background: "rgba(30,58,138,0.85)", border: "1px solid rgba(147,197,253,0.3)" }}
-                            >
-                                <span>→</span>
+                            <a href="#devis" className="z-10 flex items-center gap-2 px-4 py-2.5 rounded-md text-white text-[12px] font-semibold whitespace-nowrap flex-shrink-0 cursor-pointer select-none bg-[rgba(30,58,138,0.85)] border border-[rgba(147,197,253,0.3)] transition-all duration-200 hover:bg-blue-600 hover:border-blue-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(37,99,235,0.45)] active:scale-95 active:translate-y-0">
+                                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                                 <span>Obtenez un devis gratuit</span>
-                            </div>
+                            </a>
                         </div>
 
                         {/* Cards */}
