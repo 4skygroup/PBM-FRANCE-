@@ -1,5 +1,5 @@
 import RealisationCard from "./RealisationCard";
-import realisations from "../../data/Realisations.js";
+import realisations from "../../data/Realisations.jsx";
 
 export default function ListeRealisations() {
     return (
