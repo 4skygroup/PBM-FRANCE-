@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../Logo.jsx";
+import {Phone} from "lucide-react";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -49,8 +50,8 @@ export default function Navbar() {
                             <a
                                 href={link.href}
                                 onClick={(e) => handleSmoothScroll(e, link.href)}
-                                className="no-underline text-gray-700 text-[13px] font-normal tracking-[0.5px]
-                                hover:text-black transition-colors duration-200"
+                                className="no-underline text-black-400 text-[13px] font-medium tracking-[0.5px]
+                                hover:text-gray-500 transition-colors duration-200"
                             >
                                 {link.label}
                             </a>
@@ -63,9 +64,9 @@ export default function Navbar() {
                     <a
                         href="tel:+33600000000"
                         className="hidden md:flex items-center gap-1.5 no-underline
-                        text-[13px] text-gray-600 hover:text-black transition-colors duration-200"
+                        text-[13px] text-black-600 hover:text-gray-500 transition-colors duration-200"
                     >
-                        <span>📞</span>
+                        <Phone size={16} className="text-pbm-blue3" />
                         <span>06 XX XX XX XX</span>
                     </a>
 
@@ -125,7 +126,8 @@ export default function Navbar() {
                     href="tel:+33600000000"
                     className="no-underline text-gray-500 text-sm flex items-center gap-2"
                 >
-                    📞 06 XX XX XX XX
+                    <Phone size={16} className="text-pbm-blue3" />
+                    06 XX XX XX XX
                 </a>
             </div>
         </>
