@@ -1,3 +1,6 @@
+import escalier from "../assets/img-realisations/Escalier.png";
+import gardeCorps from "../assets/img-realisations/Garde-corps-fer-forget.png"
+
 const realisations = [
     {
         id: 1,
@@ -17,14 +20,14 @@ const realisations = [
         id: 3,
         label: "Escalier métal",
         lieu: "Gonesse 95",
-        image: "src/assets/img-realisations/Escalier.png",
+        image: escalier,
         large: false,
     },
     {
         id: 4,
         label: "Garde-corps",
         lieu: "Cergy 95",
-        image: "src/assets/img-realisations/Garde-corps-fer-forget.png",
+        image: gardeCorps,
         large: false,
     },
     {

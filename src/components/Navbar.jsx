@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "../assets/CYBERSKY.png";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ export default function Navbar() {
                     href="#hero"
                 >
                     <img
-                        src="src/assets/CYBERSKY.png"
+                        src= {logo}
                         alt="PBM France"
                         className="h-8 md:h-10 w-auto object-contain"
                     />
