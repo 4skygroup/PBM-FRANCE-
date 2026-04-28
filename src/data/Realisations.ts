@@ -17,14 +17,14 @@ const realisations = [
         id: 3,
         label: "Escalier métal",
         lieu: "Gonesse 95",
-        image: null,
+        image: "src/assets/img-realisations/Escalier.png",
         large: false,
     },
     {
         id: 4,
         label: "Garde-corps",
         lieu: "Cergy 95",
-        image: null,
+        image: "src/assets/img-realisations/Garde-corps-fer-forget.png",
         large: false,
     },
     {

@@ -77,7 +77,7 @@ export default function Hero() {
                     {/* CTA */}
                     <div className="flex items-center gap-4 flex-wrap">
                         <a
-                            href="#devis"
+                            href="#realisations"
                             className="font-dm font-medium text-sm text-white px-8 py-3.5 rounded-lg inline-flex items-center gap-2 transition-all duration-200 hover:-translate-y-0.5"
                             style={{
                                 background: "linear-gradient(135deg, #3730d4, #4f46e5)",
@@ -93,15 +93,9 @@ export default function Hero() {
                                     "0 8px 30px rgba(55,48,212,0.35)")
                             }
                         >
-                            Devis gratuit 24h →
+                            Nos réalisations →
                         </a>
 
-                        <a
-                            href="#realisations"
-                            className="font-dm font-light text-sm text-pbm-white px-8 py-3.5 rounded-lg inline-flex items-center gap-2 transition-all duration-200 border border-white/15 hover:border-pbm-blue3/50 hover:text-pbm-blue3"
-                        >
-                            Nos réalisations
-                        </a>
                     </div>
 
                     {/* Stats */}
@@ -149,29 +143,47 @@ export default function Hero() {
                         <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
                         <span className="w-2.5 h-2.5 rounded-full bg-[#28ca40]" />
                         <div className="flex-1 bg-white/[0.06] rounded h-[26px] flex items-center px-3 text-[11px] text-pbm-grey font-dm gap-1.5">
-                            🔒 pro-batiment-menuiserie.fr
+                            🔒 pbm-france.com
                         </div>
                     </div>
 
                     {/* Content */}
                     <div className="p-5">
-                        <div className="w-full h-40 rounded-xl mb-4 overflow-hidden relative border border-pbm-blue3/15">
-                            <img
-                                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
-                                alt="Chantier métallerie"
-                                className="w-full h-full object-cover opacity-70"
-                            />
+
+                        {/* BANNIÈRE "Portails et Clôtures sur Mesure" */}
+                        <div
+                            className="w-full h-40 rounded-xl mb-4 overflow-hidden relative flex items-center justify-between px-6"
+                            style={{
+                                background: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 60%, #1e3a8a 100%)",
+                            }}
+                        >
+                            {/* Chevron décoratif central */}
                             <div
-                                className="absolute inset-0 flex items-center justify-center font-bebas text-3xl tracking-widest text-white/75"
+                                className="absolute inset-y-0 left-[58%] w-12"
                                 style={{
-                                    background:
-                                        "linear-gradient(135deg, rgba(55,48,212,0.4), rgba(0,0,0,0.5))",
+                                    background: "linear-gradient(90deg, transparent, rgba(30,58,138,0.6))",
+                                    clipPath: "polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%)",
                                 }}
-                            >
-                                PBM FRANCE
+                            />
+
+                            {/* Texte gauche */}
+                            <div className="z-10">
+                                <p className="text-blue-200 text-[11px] font-medium mb-1 tracking-wide">
+                                    Prêt à transformer l'apparence de votre entrée ?
+                                </p>
+                                <p className="text-white font-bebas text-2xl tracking-wide leading-tight">
+                                    Portails et Clôtures<br />sur Mesure
+                                </p>
                             </div>
+
+                            {/* Bouton droit */}
+                            <a href="#devis" className="z-10 flex items-center gap-2 px-4 py-2.5 rounded-md text-white text-[12px] font-semibold whitespace-nowrap flex-shrink-0 cursor-pointer select-none bg-[rgba(30,58,138,0.85)] border border-[rgba(147,197,253,0.3)] transition-all duration-200 hover:bg-blue-600 hover:border-blue-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(37,99,235,0.45)] active:scale-95 active:translate-y-0">
+                                <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                                <span>Obtenez un devis gratuit</span>
+                            </a>
                         </div>
 
+                        {/* Cards */}
                         <div className="grid grid-cols-3 gap-2.5">
                             {[1, 2, 3].map((_, i) => (
                                 <div

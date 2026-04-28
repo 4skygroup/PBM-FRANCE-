@@ -13,6 +13,7 @@ export default {
         "pbm-blue3":      "#6366f1",
         "pbm-blue-glow":  "rgba(55,48,212,0.2)",
         "pbm-white":      "#f5f3ee",
+        "pbm-white-soft": "#FAFAFC",
         "pbm-grey":       "#6b6b7e",
         "pbm-grey2":      "#a0a0b0",
         "pbm-gold":       "#c9a84c",
