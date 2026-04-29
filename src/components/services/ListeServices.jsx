@@ -3,7 +3,7 @@ import {services} from "../../data/Services.ts";
 
 export default function ListeServices() {
     return (
-        <section id="services" className="bg-pbm-noir px-[60px] pt-[120px] pb-[120px] relative">
+        <section id="services" className="bg-pbm-noir px-[60px] py-[120px] relative">
             {/* En-tête */}
             <div className="flex items-center gap-[10px] text-[10px] text-pbm-blue2 font-bold uppercase tracking-[3px] mb-4">
                 <span className="w-6 h-px bg-pbm-blue2 shrink-0" />

@@ -7,6 +7,7 @@ import ListeRealisations from "./components/realisations/ListeRealisations.jsx";
 import Formulaire from "./components/formulaire/Formulaire.jsx";
 import WhatsAppFloat from "./components/WhatsAppFloat.jsx";
 import Footer from "./components/Footer.jsx";
+import AboutSection from "./components/Aboutsection.jsx";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
             <Navbar />
             <Hero />
             <ListeZones />
+            <AboutSection />
             <ListeServices />
             <WhyUs />
             <ListeRealisations />
