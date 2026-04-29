@@ -1,4 +1,4 @@
-import logo from "./assets/CYBERSKY.png";
+import logo from "../public/CYBERSKY.png";
 
 export default function Logo() {
     return (

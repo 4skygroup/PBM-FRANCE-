@@ -18,11 +18,33 @@ export default function DevisForm() {
 
     function validate() {
         const errs = {};
-        if (!fields.nom.trim())       errs.nom        = "Ce champ est requis";
-        if (!fields.tel.trim())       errs.tel        = "Ce champ est requis";
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) errs.email = "Email invalide";
-        if (!fields.ville.trim())     errs.ville      = "Ce champ est requis";
-        if (!fields.prestation)       errs.prestation = "Veuillez sélectionner une prestation";
+
+        if (!fields.nom.trim())
+            errs.nom = "Ce champ est requis";
+        else if (fields.nom.trim().length > 50)
+            errs.nom = "50 caractères maximum";
+
+        if (!fields.tel.trim())
+            errs.tel = "Ce champ est requis";
+        else if (!/^\d{10}$/.test(fields.tel.replace(/\s/g, "")))
+            errs.tel = "Numéro invalide (10 chiffres)";
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email))
+            errs.email = "Email invalide";
+        else if (fields.email.length > 50)
+            errs.email = "50 caractères maximum";
+
+        if (!fields.ville.trim())
+            errs.ville = "Ce champ est requis";
+        else if (fields.ville.trim().length > 50)
+            errs.ville = "50 caractères maximum";
+
+        if (!fields.prestation)
+            errs.prestation = "Veuillez sélectionner une prestation";
+
+        if (fields.desc.length > 1000)
+            errs.desc = "1000 caractères maximum";
+
         setErrors(errs);
         return Object.keys(errs).length === 0;
     }
@@ -97,6 +119,7 @@ export default function DevisForm() {
                                         value={fields.nom}
                                         onChange={set("nom")}
                                         className={`${inputBase} ${errors.nom ? inputError : inputNormal}`}
+                                        maxLength={50}
                                     />
                                 </Field>
                                 <Field label="Téléphone" required error={errors.tel}>
@@ -107,6 +130,7 @@ export default function DevisForm() {
                                         value={fields.tel}
                                         onChange={set("tel")}
                                         className={`${inputBase} ${errors.tel ? inputError : inputNormal}`}
+                                        maxLength={10}
                                     />
                                 </Field>
                             </div>
@@ -120,6 +144,7 @@ export default function DevisForm() {
                                         value={fields.email}
                                         onChange={set("email")}
                                         className={`${inputBase} ${errors.email ? inputError : inputNormal}`}
+                                        maxLength={50}
                                     />
                                 </Field>
                                 <Field label="Ville" required error={errors.ville}>
@@ -130,6 +155,7 @@ export default function DevisForm() {
                                         value={fields.ville}
                                         onChange={set("ville")}
                                         className={`${inputBase} ${errors.ville ? inputError : inputNormal}`}
+                                        maxLength={50}
                                     />
                                 </Field>
                             </div>
@@ -165,6 +191,7 @@ export default function DevisForm() {
                                         value={fields.desc}
                                         onChange={set("desc")}
                                         className={`${inputBase} resize-none ${inputNormal}`}
+                                        maxLength={1000}
                                     />
                                 </Field>
                             </div>
