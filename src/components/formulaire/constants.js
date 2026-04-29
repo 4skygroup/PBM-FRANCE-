@@ -8,4 +8,4 @@ export const PRESTATIONS = [
     "Autre",
 ];
 
-export const WHATSAPP_NUMBER = "33600000000";
+export const WHATSAPP_NUMBER = "33652377496";
