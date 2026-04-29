@@ -130,7 +130,6 @@ export default function DevisForm() {
                                         value={fields.tel}
                                         onChange={set("tel")}
                                         className={`${inputBase} ${errors.tel ? inputError : inputNormal}`}
-                                        maxLength={10}
                                     />
                                 </Field>
                             </div>
