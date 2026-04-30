@@ -1,6 +1,9 @@
 import RealisationCard from "./RealisationCard";
 import realisations from "../../data/Realisations.jsx";
 
+// Uniquement les 5 cartes vitrine — les autres sont dans les pages de détail
+const vitrines = realisations.filter((r) => r.vitrine === true);
+
 export default function ListeRealisations() {
     return (
         <section id="realisations" className="px-5 sm:px-8 md:px-[60px] py-16 md:py-[120px] bg-pbm-noir">
@@ -16,13 +19,7 @@ export default function ListeRealisations() {
             {/* Titre */}
             <h2 className="font-bebas text-[clamp(42px,5vw,72px)] mx-[40px] md:mx-0 leading-[.95] tracking-tight mb-4 text-pbm-white">
                 Nos{" "}
-                <span
-                    style={{
-                        background: "linear-gradient(90deg, #4f46e5, #6366f1)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                    }}
-                >
+                <span style={{ background: "linear-gradient(90deg, #4f46e5, #6366f1)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                     réalisations
                 </span>
             </h2>
@@ -32,8 +29,7 @@ export default function ListeRealisations() {
                 Quelques exemples de chantiers réalisés en Île-de-France. Chaque projet est unique.
             </p>
 
-            {/* Grille mobile : 1 col centrée avec largeur max
-                Desktop : 3 col, 2 rows, première card span 2 lignes */}
+            {/* Grille — toujours 5 cartes */}
             <div className="
                 grid gap-2.5 justify-center
                 grid-cols-[minmax(0,280px)]
@@ -43,17 +39,17 @@ export default function ListeRealisations() {
                 md:grid-rows-[240px_240px]
                 md:auto-rows-[unset]
             ">
-                {realisations.map((item) => (
+                {vitrines.map((item) => (
                     <RealisationCard
                         key={item.id}
                         label={item.label}
                         lieu={item.lieu}
                         image={item.image}
                         large={item.large}
+                        type={item.type}
                     />
                 ))}
             </div>
-
         </section>
     );
 }
