@@ -1,6 +1,6 @@
 import { Phone, Mail, MapPin } from 'lucide-react';
 import React from 'react';
-import Logo from "../Logo.jsx";
+import Logo from "./Logo.jsx";
 
 const Footer = () => {
     const phone = '06 52 37 74 96';
