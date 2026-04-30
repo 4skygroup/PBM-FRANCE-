@@ -1,4 +1,4 @@
-import PBM from "../assets/PhotoPBM.png";
+import PBM from "../assets/Photoapropos.png";
 
 export default function AboutSection() {
     return (
