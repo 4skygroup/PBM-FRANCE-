@@ -1,5 +1,8 @@
 // Lightbox — modal image agrandie
 
+import {MapPin} from "lucide-react";
+import React from "react";
+
 export default function LightBox({ projet, onClose }) {
     if (!projet) return null;
 
@@ -58,7 +61,7 @@ export default function LightBox({ projet, onClose }) {
                             {projet.tags.map((tag) => (
                                 <span
                                     key={tag}
-                                    className="text-[11px] font-semibold px-2.5 py-1 rounded-md"
+                                    className="text-[11px] text-white font-semibold px-2.5 py-1 rounded-md"
                                     style={{
                                         background: "rgba(0,0,0,0.7)",
                                         backdropFilter: "blur(10px)",
@@ -76,7 +79,8 @@ export default function LightBox({ projet, onClose }) {
                 <div className="p-6">
                     <h3 className="text-xl font-bold text-white mb-1">{projet.label}</h3>
                     <p className="text-sm text-[#a0a0b0] flex items-center gap-1 mb-3">
-                        📍 {projet.lieu}
+                        <MapPin size={16} className="text-pbm-blue3" />
+                        {projet.lieu}
                     </p>
                     {projet.description && (
                         <p className="text-sm text-[#a0a0b0] leading-relaxed">

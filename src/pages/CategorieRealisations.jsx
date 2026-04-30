@@ -71,7 +71,7 @@ export default function CategorieRealisations() {
 
                     {/* Sidebar */}
                     <div
-                        className="w-full lg:min-w-[300px] lg:max-w-[340px] rounded-2xl p-8"
+                        className="w-full lg:min-w-[300px] lg:max-w-[340px] rounded-2xl p-5"
                         style={{
                             background: "#16161f",
                             border: "1px solid rgba(72,85,229,0.2)",

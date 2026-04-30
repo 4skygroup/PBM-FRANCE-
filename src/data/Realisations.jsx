@@ -61,7 +61,7 @@ const realisations = [
     },
     {
         id: 5,
-        label: "Façade aluminium immeuble tertiaire",
+        label: "Façade aluminium",
         lieu: "Roissy-en-France",
         image: facadeAluminium,
         large: false,
