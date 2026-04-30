@@ -172,7 +172,7 @@ export default function Hero() {
                                     Prêt à transformer l'apparence de votre entrée ?
                                 </p>
                                 <p className="text-white font-bebas text-2xl tracking-wide leading-tight">
-                                    Portails et Clôtures<br />sur Mesure
+                                    Portails et Clôtures sur Mesure
                                 </p>
                             </div>
 

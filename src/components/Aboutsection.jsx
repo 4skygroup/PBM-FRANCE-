@@ -1,4 +1,4 @@
-import escalier from "../assets/img-realisations/Escalier.png";
+import PBM from "../assets/PhotoPBM.png";
 
 export default function AboutSection() {
     return (
@@ -60,7 +60,7 @@ export default function AboutSection() {
                                 }}
                             >
                                 <img
-                                    src={escalier}
+                                    src={PBM}
                                     alt="L'équipe PBM France"
                                     className="w-full h-full object-cover"
                                 />
