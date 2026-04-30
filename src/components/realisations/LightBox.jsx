@@ -30,6 +30,7 @@ export default function LightBox({ projet, onClose }) {
                             src={projet.image}
                             alt={`${projet.label} — ${projet.lieu}`}
                             className="w-full h-full object-cover"
+                            decoding="async"
                         />
                     ) : (
                         <div

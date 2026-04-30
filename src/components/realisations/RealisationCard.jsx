@@ -30,6 +30,7 @@ export default function RealisationCard({ label, lieu, image, large, type }) {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     style={{ display: "block" }}
                     loading="lazy"
+                    decoding="async"
                 />
             ) : (
                 <div

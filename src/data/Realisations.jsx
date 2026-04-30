@@ -1,12 +1,11 @@
-import escalier from "../assets/img-realisations/Escalier.png";
-import gardeCorps from "../assets/img-realisations/Garde-corps-fer-forget.png";
-import gardeCorps2 from "../assets/img-realisations/Garde-corps-intérieur.png";
-import escalier2 from "../assets/img-realisations/Escalier-sur-mesure.png";
-import portailBattant from "../assets/img-realisations/Portail-battant-design.png";
-import portailFerForge from "../assets/img-realisations/Portail-fer-forge-classique.png";
-import rideauMetallique from "../assets/img-realisations/Rideau-metallique-commerce.png";
-import facadeAluminium from "../assets/img-realisations/Facade-aluminium-tertiaire.png"
-import portailCoulissant from "../assets/img-realisations/Portail-coulissant-motorise.png"
+import gardeCorps from "../assets/img-realisations/Garde-corps-fer-forget.jpg";
+import gardeCorps2 from "../assets/img-realisations/Garde-corps-intérieur.jpg";
+import escalier2 from "../assets/img-realisations/Escalier-sur-mesure.jpg";
+import portailBattant from "../assets/img-realisations/Portail-battant-design.jpg";
+import portailFerForge from "../assets/img-realisations/Portail-fer-forge-classique.jpg";
+import rideauMetallique from "../assets/img-realisations/Rideau-metallique-commerce.jpg";
+import facadeAluminium from "../assets/img-realisations/Facade-aluminium-tertiaire.jpg"
+import portailCoulissant from "../assets/img-realisations/Portail-coulissant-motorise.jpg"
 
 const realisations = [
     // ── VITRINE (grille principale — 1 par type, toujours 5 cartes) ──────────

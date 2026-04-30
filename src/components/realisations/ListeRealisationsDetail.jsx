@@ -34,6 +34,7 @@ export default function ListeRealisationsDetail({ projet, onClick }) {
                         alt={`${projet.label} — ${projet.lieu}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.08]"
                         loading="lazy"
+                        decoding="async"
                     />
                 ) : (
                     <div

@@ -1,4 +1,4 @@
-import PBM from "../assets/Photoapropos.png";
+import PBM from "../assets/Photoapropos.jpg";
 
 export default function AboutSection() {
     return (
@@ -63,6 +63,8 @@ export default function AboutSection() {
                                     src={PBM}
                                     alt="L'équipe PBM France"
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>
